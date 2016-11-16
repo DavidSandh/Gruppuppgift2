@@ -1,1 +1,8 @@
-System.out.println("Hej och välkommna allihopa !");
+public class hejallihopa;
+
+  public static void main(String[]args){
+  
+      System.out.println("Hej och välkommna allihopa !");
+  }
+  
+  
