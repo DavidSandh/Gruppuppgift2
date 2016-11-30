@@ -1,19 +1,25 @@
-package yatzy;
+package game2;
 
 import java.awt.Color;
 import java.util.Random;
 
 import javax.swing.ImageIcon;
 
+import controller.StartGamePanel;
 import gu2.PaintWindow_GU2;
 
 
 public class Controller {
 	
-	private Game game;
+	private Game2 game;
+	private StartGamePanel startgamepanel;
 	
 	private boolean[] picked = new boolean[5];
 	
+	public Controller(StartGamePanel startgamepanel) {
+		this.startgamepanel = startgamepanel;
+	}
+
 	public void throwDice(int[] toss, int[] tossCount){
 		Random rand = new Random();
 		int temp = 0;
@@ -80,7 +86,7 @@ public class Controller {
 	}
 	
 	public void exit(){
-		System.exit(0);
+		startgamepanel.menu();
 	}
 	
 	public void checkForYatzy(int array[]){

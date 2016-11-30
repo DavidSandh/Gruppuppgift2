@@ -36,7 +36,7 @@ public class MainMenu {
 		
 		mWindow.setIconAction(btnMenu1, this, "game1");
 		mWindow.setIconAction(btnMenu2, this, "game2");
-//		mWindow.setIconAction(btnMenu3, this, "game3");
+		mWindow.setIconAction(btnMenu3, this, "game3");
 		mWindow.setIconAction(btnMenu4, this, "exit");
 	}
 	
@@ -44,14 +44,14 @@ public class MainMenu {
 		mController.moveCameraTo("GAME1");
 	}
 	
-/*	public void game2() {
+	public void game2() {
 		mController.moveCameraTo("GAME2");
 	}
 	
 	public void game3() {
 		mController.moveCameraTo("GAME3");
 	}
-*/	
+	
 	public void exit() {
 		mController.exit();
 	}
