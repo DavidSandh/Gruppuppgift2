@@ -33,10 +33,6 @@ public class Controller {
 		}	
 	}
 	
-	public boolean[] getPicked(){
-		return picked;
-	}
-	
 	//Ett gäng metoder som sätter bestämd tärning till sann (alltså ska behållas)
 	public void setOneTrue(){
 		if(picked[0]==true){
@@ -89,13 +85,14 @@ public class Controller {
 		startgamepanel.menu();
 	}
 	
-	public void checkForYatzy(int array[]){
-		String temp = "Du har inte fått yatzy";
-		for(int i=0; i<array.length; i++){
-			if(array[i] == 5){
-				temp = "Du har fått yatzy";
-			}
+	public void checkForYatzy(int array[], int arrayCounter[]){
+		int temp;
+		for(int i = 0; i<arrayCounter.length; i++){
+			arrayCounter[i] = 0;
 		}
-		System.out.print(temp);
+		for(int i = 0; i<array.length; i++){
+			temp = array[i];
+			arrayCounter[temp-1]++;
+		}
 	}
 }
