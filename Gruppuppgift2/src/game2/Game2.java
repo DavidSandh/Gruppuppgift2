@@ -15,7 +15,7 @@ public class Game2 {
 	
 	private PaintWindow_GU2 window;
 	
-	private int[] tossCount = new int[6];
+	private int[] tossCounter = new int[6];
 	private int[] toss = new int[5];
 	
 	private ImageIcon one;
@@ -80,15 +80,11 @@ public class Game2 {
 	}
 	public void runGame(){
 		controller.throwDice(toss, tossCount); //kastar tärningen 5 gånger och räknar in kasten i en array.
-		boolean[] picked = controller.getPicked();
+		
+		controller.checkForYatzy(toss, tossCounter);
 		
 		int counter = 0;
 		
-		for(int i=0; i<picked.length; i++){
-			if(picked[i] == true){
-				counter++;
-			}
-		}
 		//En lång radda if else satser som kollar igenom arrayen med kast och sätter en bild passande kastet.
 		if (toss[0] == 1){
 			setPictureOne(onePNG1);
@@ -213,12 +209,19 @@ public class Game2 {
 		window.setIconAction(three, this.controller, "setThreeTrue");
 		window.setIconAction(four, this.controller, "setFourTrue");
 		window.setIconAction(five, this.controller, "setFiveTrue");
+		
+		for(int i = 0; i<tossCounter.length; i++){
+			if(tossCounter[i] == 5){
+				window.addIcon(yatzy, x+140, y+180, true);
+			}
 		}
+	}
 	
 	public void newGame(){
 		for(int i=0; i<toss.length; i++){
 			toss[i] = 0;
 		}
+		window.removeIcon(yatzy);
 		controller.newGame();
 		runGame();
 	}
