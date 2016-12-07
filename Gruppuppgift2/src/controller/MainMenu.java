@@ -20,9 +20,9 @@ public class MainMenu {
 		ImageIcon btnMenu2 = StartApp.getImageIcon("/mainmenu/images/black_button.png");
 		ImageIcon btnMenu3 = StartApp.getImageIcon("/mainmenu/images/black_button.png");
 		ImageIcon btnMenu4 = StartApp.getImageIcon("/mainmenu/images/black_button.png");
-		Text txtGame1 = new Text("Game 1", font, Color.WHITE);
-		Text txtGame2 = new Text("Game 2", font, Color.LIGHT_GRAY);
-		Text txtGame3 = new Text("Game 3", font, Color.YELLOW);
+		Text txtGame1 = new Text("Racing", font, Color.WHITE);
+		Text txtGame2 = new Text("Yatzy", font, Color.LIGHT_GRAY);
+		Text txtGame3 = new Text("Get Home", font, Color.YELLOW);
 		Text txtExit = new Text("Avsluta", font, Color.GREEN);
 		
 		mWindow.addIcon(btnMenu1, x+100, y+40, true);

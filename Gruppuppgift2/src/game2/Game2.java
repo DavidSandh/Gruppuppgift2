@@ -10,7 +10,7 @@ import gu2.PaintWindow_GU2;
 import paintpanel.Text;
 
 public class Game2 {
-	Controller controller;
+	private Controller controller;
 	private StartGamePanel startgamepanel;
 	
 	private PaintWindow_GU2 window;
@@ -60,6 +60,7 @@ public class Game2 {
 	private ImageIcon fourPNG5 = StartApp.getImageIcon("/game2/images/Fyra.png");
 	private ImageIcon fivePNG5 = StartApp.getImageIcon("/game2/images/Femma.png");
 	private ImageIcon sixPNG5 = StartApp.getImageIcon("/game2/images/Sexa.png");
+	private ImageIcon yatzy = StartApp.getImageIcon("/game2/images/yatzy.png");
 
 	
 	private ImageIcon btnThrowDice = StartApp.getImageIcon("/game2/images/kastatarning.png");
@@ -76,10 +77,9 @@ public class Game2 {
 		this.x = x;
 		this.y = y;
 		runGame();
-		
 	}
 	public void runGame(){
-		controller.throwDice(toss, tossCount); //kastar tärningen 5 gånger och räknar in kasten i en array.
+		controller.throwDice(toss, tossCounter); //kastar tärningen 5 gånger och räknar in kasten i en array.
 		
 		controller.checkForYatzy(toss, tossCounter);
 		

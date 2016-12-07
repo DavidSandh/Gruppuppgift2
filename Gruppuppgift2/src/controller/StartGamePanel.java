@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import game1.Game1;
 import game2.Game2;
+import game3.GameControl;
 //import game2.Game2;
 //import game3.Game3;
 import gu2.PaintWindow_GU2;
@@ -22,12 +23,13 @@ public class StartGamePanel {
 	private PaintWindow_GU2 mWindow;
 	private Game1 mGame1;
 	private Game2 mGame2;
-	//private Game3 mGame3;
+	private GameControl mGame3;
 	public StartGamePanel() {
 		mWindow = new PaintWindow_GU2(800,600,1600,1200,"Application_Example",Color.LIGHT_GRAY);
 		MainMenu menu = new MainMenu(mWindow, this, MENU_X, MENU_Y);
 		mGame1 = new Game1(mWindow, this, GAME1_X, GAME1_Y);
 		mGame2 = new Game2(mWindow, this, GAME2_X, GAME2_Y);
+		mGame3 = new GameControl(mWindow, this, GAME3_X, GAME3_Y);
 	}
 	
 	public void menu() {
@@ -40,11 +42,12 @@ public class StartGamePanel {
 		case "GAME2" : 
 			moveCameraTo(GAME2_X,GAME2_Y,50); 
 			break;
-/*		case "GAME3" : 
-			mWindow.executeAction(mGame3, "start");
-			moveCameraTo(GAME3_X,GAME3_Y,40); 
+		case "GAME3" : 
+			//mWindow.executeAction(mGame3, "start");
+			moveCameraTo(GAME3_X,GAME3_Y,1); 
+			mGame3.game();
 			break;
-*/		}
+		}
 	}
 	
 	public void moveCameraTo(int toX, int toY, int steps) {
