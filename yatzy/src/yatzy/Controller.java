@@ -5,13 +5,15 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import javax.swing.ImageIcon;
 
-
+/**
+* Controller klass för Yatzy som tar hand om knapptryckningarna som sker på userinput samt bestämmer
+* och skickar iväg de nya tärningarna som visas på viewern 
 public class Controller {
 
 	private Viewer viewer;
 	
 	private ImageIcon onePNG = new ImageIcon(getClass().getResource("/resources/Etta.png"));
-	private ImageIcon twoPNG = new ImageIcon(getClass().getResource("/resources/Tv�a.png"));
+	private ImageIcon twoPNG = new ImageIcon(getClass().getResource("/resources/Tvåa.png"));
 	private ImageIcon threePNG = new ImageIcon(getClass().getResource("/resources/Trea.png"));
 	private ImageIcon fourPNG = new ImageIcon(getClass().getResource("/resources/Fyra.png"));
 	private ImageIcon fivePNG = new ImageIcon(getClass().getResource("/resources/Femma.png"));
@@ -22,19 +24,19 @@ public class Controller {
 	public Controller(Viewer viewer) {
 		this.viewer = viewer;
 	}
-	
+	//En metod som simulerar ett tärningskast
 	public int tossDice(){
 		return (int)(Math.random()*6+1);
 	}
-	
+	//En metod som stänger ner spelet
 	public void exit(){
 		System.exit(0);
 	}
-	
+	//En metod som nollställer counter.
 	public void resetCounter(){
 		counter = 0;
 	}
-	
+	// En metod som skapar ett nytt spel tar bort alla nersparade värden samt tärningarna.
 	public void newGame(){
 		
 		int player[] = viewer.getPlayer();
@@ -64,11 +66,12 @@ public class Controller {
 		viewer.setCounter(0);
 		
 	}
-	
+	// En metod som sätter alla boxes till false
 	public void setBoxesFalse() {
 		viewer.setBoxesFalse();
 	}
 	
+	//En metod med reglerna samt sätter poängen för par
 	public void setPairScore(){
 		
 		boolean[] checkChecker = new boolean[5];
@@ -132,7 +135,7 @@ public class Controller {
 		viewer.setPair("Par");
 		
 	}
-	
+	//En metod med regler som också sätter poäng för två par
 	public void setTwoPairScore(){
 		
 		boolean[] checkChecker = new boolean[5];
@@ -205,10 +208,10 @@ public class Controller {
 			viewer.setPoints(viewer.getPoints());
 		}
 		
-		viewer.setTwoPair("Tv� par");
+		viewer.setTwoPair("Två par");
 		
 	}
-
+	//En metod med regler samt som sätter poäng för tretal
 	public void setThreesScore(){
 		
 		int[] player = viewer.getPlayer();
@@ -272,7 +275,7 @@ public class Controller {
 	viewer.setThrees("Tretal");
 	
 }
-	
+	//En metod med regler som sätter poäng för fyrtal
 	public void setFoursScore(){
 		
 		boolean[] checkChecker = new boolean[5];
@@ -336,7 +339,7 @@ public class Controller {
 		viewer.setFours("Fyrtal");
 		
 	}
-	
+	//En metod med regler som samt sätter poäng för liten straight
 	public void setTinyStraight(){
 		
 		boolean[] checkChecker = new boolean[5];
@@ -386,7 +389,7 @@ public class Controller {
 		viewer.setTinyStraight("Liten Straight");
 		
 	}
-	
+	//En metod med regler samt som sätter poäng för en stor straight
 	public void setBigStraight(){
 		
 		boolean[] checkChecker = new boolean[5];
@@ -436,7 +439,7 @@ public class Controller {
 		viewer.setBigStraight("Stor Straight");
 		
 	}
-	
+	//En metod med regler samt som sätter poäng för fullt hus
 	public void setFullHouse(){
 		boolean[] checkChecker = new boolean[5];
 		int[] player = viewer.getPlayer();
@@ -513,8 +516,9 @@ public class Controller {
 		else{
 			viewer.setPoints(viewer.getPoints());
 		}
-		viewer.setFullHouse("K�k");
+		viewer.setFullHouse("Kåk");
 	}
+	//En metod med regler samt sätter poäng för yatzy
 	public void setYatzyScore(){
 		
 		boolean[] checkChecker = new boolean[5];
@@ -574,7 +578,10 @@ public class Controller {
 		
 	}
 	
-	
+	/*
+	* En metod som i en for loop kastar om alla tärningar. för att sedan se om någon av tärningarna
+	* blivit valda att bli besparade. Om inte så får de värde beroende på vilket kast de fick. 
+	*/
 	public void gamePlay(){
 		
 		int player[] = viewer.getPlayer();
