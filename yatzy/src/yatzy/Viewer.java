@@ -6,7 +6,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import javax.swing.*;
-
+/**
+* En klass som ärver en JPanel och visar upp tärningarna som kastat med hjälp av Controller klassen.
+* Klassen innehåller också ett gäng checkboxes som används vid val av tärningar. 
+*/
 public class Viewer extends JPanel {
 	
 	private Controller controller;
@@ -23,8 +26,8 @@ public class Viewer extends JPanel {
 
 	private int points = 0;
 	
-	private JLabel omKast = new JLabel("V�lj de t�rningar du vill beh�lla");
-	private JLabel showPoints = new JLabel("Dina po�ng: " + points);
+	private JLabel omKast = new JLabel("Välj de tärningar du vill behålla");
+	private JLabel showPoints = new JLabel("Dina poäng: " + points);
 	
 	private Font font = new Font("Italic", Font.BOLD, 16);
 	
@@ -34,7 +37,7 @@ public class Viewer extends JPanel {
 	private JLabel die4 = new JLabel();
 	private JLabel die5 = new JLabel();
 
-	private JLabel result = new JLabel ("Anv�nda paragrafer");
+	private JLabel result = new JLabel ("Använda paragrafer");
 	private JLabel pair = new JLabel ("");
 	private JLabel twoPair = new JLabel ("");
 	private JLabel threes = new JLabel ("");
@@ -112,9 +115,9 @@ public class Viewer extends JPanel {
 	public void setPoints(int points){
 		counter++;
 		this.points = points;
-		showPoints.setText("Dina po�ng: " + points);
+		showPoints.setText("Dina poäng: " + points);
 		if(counter == 8){
-			showPoints.setText("Ditt resultat blev: " + points + " po�ng");
+			showPoints.setText("Ditt resultat blev: " + points + " poäng");
 			box1.setEnabled(false);
 			box2.setEnabled(false);
 			box3.setEnabled(false);
