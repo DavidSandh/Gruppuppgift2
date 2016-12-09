@@ -7,8 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
-* En klass som ärver en JPanel och visar upp tärningarna som kastat med hjälp av Controller klassen.
-* Klassen innehåller också ett gäng checkboxes som används vid val av tärningar. 
+* En klass som ärver en JPanel där ett gängknappar existerar för bla nytt spel avsluta etc.. Dessa knappar anropar controller
+* klassen där deras metoder slutförs.
 */
 public class UserInput extends JPanel {
 	
