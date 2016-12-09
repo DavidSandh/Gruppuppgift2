@@ -6,6 +6,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+* En klass som ärver en JPanel och visar upp tärningarna som kastat med hjälp av Controller klassen.
+* Klassen innehåller också ett gäng checkboxes som används vid val av tärningar. 
+*/
 public class UserInput extends JPanel {
 	
 	private Controller controller;
@@ -25,17 +29,17 @@ public class UserInput extends JPanel {
 	private int tossCounter = 0;
 	
 	private JLabel pair = new JLabel("Par");
-	private JLabel twoPair = new JLabel("Tv� Par");
+	private JLabel twoPair = new JLabel("Två Par");
 	private JLabel threes = new JLabel("Tretal");
 	private JLabel fours = new JLabel("Fyrtal");
 	private JLabel tinyStraight = new JLabel("Liten Straight");
 	private JLabel bigStraight = new JLabel("Stor Striaght");
-	private JLabel fullHouse = new JLabel("K�k");
+	private JLabel fullHouse = new JLabel("Kåk");
 	private JLabel yatzy = new JLabel("YATZY!");
 	
 	private JButton newGame = new JButton("Nytt spel");
 	private JButton exit = new JButton("Avsluta");
-	private JButton toss = new JButton("Kasta t�rningar");
+	private JButton toss = new JButton("Kasta tärningar");
 	private JButton savePair = new JButton();
 	private JButton saveTwoPair = new JButton();
 	private JButton saveThrees = new JButton();
@@ -213,7 +217,7 @@ public class UserInput extends JPanel {
 	public class TossListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if(tossCounter == 2){
-				System.out.print("Du har redan kastat om eng�ng");
+				System.out.print("Du har redan kastat om engång");
 			}
 			else{
 			controller.gamePlay();
